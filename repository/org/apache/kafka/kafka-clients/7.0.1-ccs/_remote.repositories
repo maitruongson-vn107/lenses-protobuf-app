@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Feb 21 00:24:22 ICT 2023
+kafka-clients-7.0.1-ccs.pom>confluent=
+kafka-clients-7.0.1-ccs.jar>confluent=
