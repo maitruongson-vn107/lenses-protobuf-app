@@ -1,2 +1,4 @@
-/Users/sonmt/Viettel-ITD/lenses-protobuf-app/src/main/java/kafka/SendKafkaProto.java
-/Users/sonmt/Viettel-ITD/lenses-protobuf-app/src/main/java/com/example/CardData.java
+/Users/sonmt/Viettel-ITD/proto-schema/src/main/java/com/example/CardData.java
+/Users/sonmt/Viettel-ITD/proto-schema/src/main/java/kafka/SendKafkaProto.java
+/Users/sonmt/Viettel-ITD/proto-schema/src/main/java/com/viettel/bi/spark/thrift/SparkQueryResultMessage.java
+/Users/sonmt/Viettel-ITD/proto-schema/src/main/java/com/viettel/bi/spark/thrift/SparkQueryMessage.java

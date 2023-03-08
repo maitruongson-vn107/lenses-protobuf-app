@@ -13,7 +13,7 @@ public class SendKafkaProto {
     public static void main(String[] args) {
         // Setup Producer Properties
         String bootstrapServers = "localhost:29092";
-        var properties = new Properties();
+        Properties properties = new Properties();
         properties.setProperty("bootstrap.servers", bootstrapServers);
         properties.setProperty("schema.registry.url", "http://localhost:8085");
         properties.setProperty("key.serializer", StringSerializer.class.getName());
@@ -21,7 +21,7 @@ public class SendKafkaProto {
 
         KafkaProducer<String, CardData.CreditCard> producer = new KafkaProducer<>(properties);
         // Specify Topic Name
-        var topic = "protos_topic_cards";
+        String topic = "protos_topic_cards";
 
         // Loop to Produce Fake Data
         for (int i = 0; i < 15; i++) {
@@ -35,7 +35,7 @@ public class SendKafkaProto {
             String currencyCode = faker.country().currencyCode();
 
             // Serializing to Protobuf based on CreditCard.proto Schema
-            var cardData = CardData.CreditCard.newBuilder()
+            CardData.CreditCard cardData = CardData.CreditCard.newBuilder()
                     .setName(name)
                     .setCountry(countryCode)
                     .setCurrency(currencyCode)
@@ -44,7 +44,7 @@ public class SendKafkaProto {
                     .setCardNumber(cardNumber)
                     .build();
 
-            var record = new ProducerRecord<String, CardData.CreditCard>(topic, "Credit Card", cardData);
+            ProducerRecord<String, CardData.CreditCard> record = new ProducerRecord<>(topic, "Credit Card", cardData);
             // Send to Producer
             producer.send(record);
         }
